@@ -1,5 +1,4 @@
-import array
- def move_zeros(l):
+def move_zeros(l):
      zero_idx = 0
      for i in range(len(l)):
          n = l[i]
@@ -9,10 +8,12 @@ import array
                  l[i] = 0
              zero_idx = zero_idx + 1
      return l
+ groups = ['HOT', 'Seventeen', 'Black Pink', 'NJZ']
+ # ratings = [1, 2, 4, 3, 100]
+ ratings = [1, 2, 4, 3]
  
- arr = array.array('f',[99, 0, -7, 0, 16])
- for i in range(len(arr)):
-     print(f"{arr[i]:5} {id(arr[i])}")
  l = [99, 0, -7, 0, 16]
  move_zeros(l)
  print(l)
+ group_rating = list(zip(groups, ratings))
+ print(group_rating)
