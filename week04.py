@@ -1,6 +1,4 @@
-import random
- 
- class Node:
+class Node:
      def __init__(self, data, link=None):
          self.data = data
          self.link = link
@@ -23,13 +21,18 @@ import random
  
      def remove(self, target):
          if self.head.data == target:
+         current = self.head
+         # if self.head.data == target:
+         if current.data == target:
              self.head = self.head.link
+             current.link = None
              return
          current = self.head
          previous = None
          while current:
              if current.data == target:
                  previous.link = current.link
+                 current.link = None
              previous = current
              current = current.link
  
@@ -53,17 +56,7 @@ import random
          return out_texts + "END"
  
  
- # ll = LinkedList()
- # ll.append(8)
- # ll.append(10)
- # ll.append(-9)
- # print(ll)
- # print(ll.search(99))
- # print(ll.search(10))
- 
  ll = LinkedList()
- for _ in range(10):
-     ll.append(random.randint(1, 30))
  ll.append(8)
  ll.append(10)
  ll.append(-9)
@@ -73,4 +66,3 @@ import random
  ll.remove(10)
  ll.remove(8)
  print(ll)
- print(ll.search(7))
