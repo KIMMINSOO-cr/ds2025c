@@ -20,14 +20,12 @@ class Node:
  
  
      def remove(self, target):
-         if self.head.data == target:
          current = self.head
          # if self.head.data == target:
          if current.data == target:
              self.head = self.head.link
              current.link = None
              return
-         current = self.head
          previous = None
          while current:
              if current.data == target:
@@ -40,6 +38,7 @@ class Node:
      def search(self, target):
          current = self.head
          while current.link:
+         while current:
              if target == current.data:
                  return f"{target}을(를) 찾았습니다!"
              else:
@@ -63,6 +62,7 @@ class Node:
  print(ll)
  print(ll.search(99))
  print(ll.search(10))
+ print(ll.search(-9))
  ll.remove(10)
  ll.remove(8)
  print(ll)
